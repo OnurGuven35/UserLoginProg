@@ -4,8 +4,7 @@ public class User {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        String userName, password;
-        int secim;
+        String userName, password, secim;
 
         System.out.print("Lutfen Kullanici Adinizi Giriniz : ");
         userName = input.nextLine();
@@ -16,17 +15,16 @@ public class User {
             System.out.print("Girisiniz Yapilmistir ! ");
         } else {
             System.out.println("Kullanici Adiniz veya Sifreniz Yanlistir ! ");
-            System.out.print("Sifrenizi Sifirlamak Istermisiniz ? \nCevabiniz Evet ise 1'i Hayir ise 2'yi Tuslayiniz : ");
+            System.out.println("Sifrenizi Sifirlamak Istermisiniz ?");
+            System.out.print("Evet veya Hayiri Tuslayiniz : ");
         }
 
-        secim = input.nextInt();
-
-        String newPass;
-        input.nextLine();
+        secim = input.nextLine();
 
         switch (secim) {
-            case 1:
-                System.out.print("Lutfen Yeni Bir Sifre Belirleyiniz : ");
+            case "Evet" -> {
+                System.out.print("Lutfen Yeni Bir Sifre Belirleyiniz  : ");
+                String newPass;
                 newPass = input.nextLine();
 
                 if (newPass.equals("java123")) {
@@ -34,11 +32,8 @@ public class User {
                 } else {
                     System.out.print("Yeni Sifreniz Basariyla Olusturulmustur ! ");
                 }
-                break;
-
-            case 2:
-                System.out.print("Giris Sayfasina Yonlendiriliyorsunuz !");
-                break;
+            }
+            case "Hayir" -> System.out.print("Giris Sayfasina Yonlendiriliyorsunuz !");
         }
     }
 }
